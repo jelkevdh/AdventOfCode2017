@@ -17,7 +17,7 @@ namespace AdventOfCode2017 {
     /// </summary>
     /// <param name="name">The name of this problem.</param>
     /// <param name="defaultInput">The default input.</param>
-    public Problem(string name, string defaultInput) {
+    protected Problem(string name, string defaultInput) {
       Name = name;
       DefaultInput = defaultInput;
     }
@@ -27,11 +27,12 @@ namespace AdventOfCode2017 {
     /// </summary>
     /// <returns>The puzzle input.</returns>
     public virtual string ReadInput() {
-      string input = String.Empty;
+      string input;
 
       do {
         Console.WriteLine($"-=[ {Name} ]=-");
-        Console.WriteLine($"Enter sequence [{DefaultInput}]:");
+        string defaultText = String.IsNullOrEmpty(DefaultInput) ? String.Empty : $" [{DefaultInput}]";
+        Console.WriteLine($"Enter sequence{defaultText}:");
         input = Console.ReadLine();
 
         if (input == "") {

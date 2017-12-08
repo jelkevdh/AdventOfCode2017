@@ -3,7 +3,7 @@
 namespace AdventOfCode2017 {
   class Program {
     static void Main(string[] args) {
-      var problem = new Day1.Problem2();
+      var problem = new Day2.Problem2();
 
       string input = problem.ReadInput();
 
